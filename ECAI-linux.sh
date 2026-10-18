@@ -14,7 +14,7 @@ if [ -z "$MNT" ]; then
 fi
 
 mkdir -p "$MNT/EFI/EFICOMMAND"
-curl -L "https://github.com/Syed930s/EFICOMMAND/releases/download/0.3/BOOTX64.EFI" -o "$MNT/EFI/EFICOMMAND/BOOTX64.EFI"
+curl -L "https://github.com/Syed930s/EFICOMMAND/releases/download/0.4/BOOTX64.EFI" -o "$MNT/EFI/EFICOMMAND/BOOTX64.EFI"
 
 NEW=$(efibootmgr -C -d "$DISK" -p "$PART" -L "EFICOMMAND" -l '\EFI\EFICOMMAND\BOOTX64.EFI' \
       | grep -i ' EFICOMMAND' | head -1 | sed -E 's/^Boot([0-9A-Fa-f]{4}).*/\1/')
